@@ -1,9 +1,11 @@
 <?php 
 	
-	$server_name = "localhost";
-	$username = "root";
-	$password = "";
-	$database_name = "Bank";
+	class Setting{		
+		public $server_name = "localhost";
+		public $username = "root";
+		public $password = "";
+		public $database_name = "Bank";
+	}
 
 
  ?>
