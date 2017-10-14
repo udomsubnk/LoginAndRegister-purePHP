@@ -1,8 +1,9 @@
 <?php 
 	
-	$email = $_POST['email'];
-	$password = md5($_POST['password']);
+	include "database.php";
 
-	echo $_POST;
-
+	$user_email = $_POST['email'];
+	$user_password = md5($_POST['password']);
+	
+	insertUser($user_email, $user_password);
  ?>
