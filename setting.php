@@ -7,5 +7,7 @@
 		public $db_name = "Bank";
 	}
 
+	class Error{
+	}
 
  ?>
