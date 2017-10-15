@@ -10,8 +10,9 @@
 	class Error{
 		public static $error = array(
 			'0' => "success",
-			'1' => "Database Error",
-			'2' => "Email has Exists"
+			'1' => "Database Error !",
+			'2' => "Email is Exists !",
+			'3' => "Wrong email or password !"
 		);
 	}
 

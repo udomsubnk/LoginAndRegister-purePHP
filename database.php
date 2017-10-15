@@ -67,11 +67,11 @@
 		}
 
 		public function login($user_email, $user_password){
-			$rows = mysqli_query($this->conn, "SELECT * FROM `users` WHERE email=$user_email AND password=".md5($user_password));
+			$rows = mysqli_query($this->conn, "SELECT * FROM `users` WHERE email='$user_email' AND password='$user_password'");
 			$result = mysqli_fetch_array($rows,MYSQLI_NUM);
 			if( empty($result) ){
-				return false;
-			}else return true;
+				return 3;
+			}else return 0;
 		}
 	}
 ?>
