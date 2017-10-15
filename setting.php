@@ -1,10 +1,10 @@
 <?php 
 	
 	class Setting{		
-		public $server_name = "localhost";
-		public $username = "root";
-		public $password = "";
-		public $database_name = "Bank";
+		public $db_server = "localhost";
+		public $db_username = "root";
+		public $db_password = "";
+		public $db_name = "Bank";
 	}
 
 
