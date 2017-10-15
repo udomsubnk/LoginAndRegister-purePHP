@@ -16,7 +16,9 @@
 			$this->db_password = Setting::$db_password;
 			$this->db_name = Setting::$db_name;
 
-			$this->connectToDB();
+			if($this->connectToDB() == false){
+				return 1;
+			}
 			$this->createDB();
 			$this->createUsersTable();
 		}
@@ -25,8 +27,8 @@
 			$this->conn = new mysqli($this->db_server, $this->db_username, $this->db_password);
 			// Check connection
 			if ($this->conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			} 
+			    return false;
+			}else return true;
 		}
 		private function createDB(){
 			/* Create Database */
@@ -59,9 +61,9 @@
 		public function insertUser($user_email, $user_password){
 			if( !$this->isHasEmail($user_email) ){
 				$result = mysqli_query($this->conn, "INSERT INTO `users` VALUES ( '', '$user_email','$user_password')");
-				if($result == 1) return true;
-				else return false;
-			}else return "Email";
+				if($result == 1) return 0;
+				else return 1;
+			}else return 2;
 		}
 	}
 ?>

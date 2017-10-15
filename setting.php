@@ -8,6 +8,11 @@
 	}
 
 	class Error{
+		public static $error = array(
+			'0' => "success",
+			'1' => "Database Error",
+			'2' => "Email has Exists"
+		);
 	}
 
  ?>
