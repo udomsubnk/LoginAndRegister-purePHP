@@ -7,4 +7,5 @@
 	$user_password = md5($_POST['password']);
 
 	$database = new Database();
+	echo $dataabse->login( $user_email, $user_password );
  ?>
