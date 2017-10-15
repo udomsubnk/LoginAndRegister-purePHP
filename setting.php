@@ -1,10 +1,10 @@
 <?php 
 	
 	class Setting{		
-		public $db_server = "localhost";
-		public $db_username = "root";
-		public $db_password = "";
-		public $db_name = "Bank";
+		public static $db_server = "localhost";
+		public static $db_username = "root";
+		public static $db_password = "";
+		public static $db_name = "Bank";
 	}
 
 	class Error{

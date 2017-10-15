@@ -3,7 +3,6 @@
 	require_once('setting.php');
 
 	class Database{
-		private $setting;
 		private $conn;
 
 		private $db_server;
@@ -12,11 +11,10 @@
 		private $db_name;
 
 		public function __construct(){
-			$setting = new Setting();
-			$this->db_server = $setting->db_server;
-			$this->db_username = $setting->db_username;
-			$this->db_password = $setting->db_password;
-			$this->db_name = $setting->db_name;
+			$this->db_server = Setting::$db_server;
+			$this->db_username = Setting::$db_username;
+			$this->db_password = Setting::$db_password;
+			$this->db_name = Setting::$db_name;
 
 			$this->connectToDB();
 			$this->createDB();
