@@ -63,7 +63,8 @@
 				$result = mysqli_query($this->conn, "INSERT INTO `users` VALUES ( '', '$user_email','$user_password')");
 				if($result == 1) return 0;
 				else return 1;
-			}else return 2;
+			}
+			return 2;
 		}
 
 		public function login($user_email, $user_password){
@@ -71,7 +72,9 @@
 			$result = mysqli_fetch_array($rows,MYSQLI_NUM);
 			if( empty($result) ){
 				return 3;
-			}else return 0;
+			}
+			setcookie("username",$user_email,time()+3600*24);
+			return 0;
 		}
 	}
 ?>
