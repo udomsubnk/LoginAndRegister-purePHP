@@ -9,5 +9,8 @@
 	$database = new Database();
 	
 	$result = $database->login( $user_email, $user_password );
+	if($result == 0){
+		setcookie("email",$user_email,time()+3600*24);
+	}
 	echo Error::$error[$result];
  ?>

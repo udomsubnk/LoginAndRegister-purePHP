@@ -73,7 +73,6 @@
 			if( empty($result) ){
 				return 3;
 			}
-			setcookie("username",$user_email,time()+3600*24);
 			return 0;
 		}
 	}
