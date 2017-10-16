@@ -6,7 +6,7 @@
 			echo "loggedin";
 		}else echo "notloggedin";
 	}else if( $type == "logout" ){
-		unset( $_COOKIE['email'] );
+		setcookie ("email", null, time() - (3600*24));//unset cookie
 		echo "done";
 	}
  ?>
